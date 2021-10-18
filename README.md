@@ -24,7 +24,7 @@ For example, `cx:metadata-extract` on [this image](https://github.com/xmlcalabas
 
 ![Photograph of an amaryllis](https://github.com/xmlcalabash/cx-metadata-extractor/blob/main/src/test/resources/amaryllis.jpg?raw=true)
 
-Produces something like this (much of the metadata has been elided for the sake of appearance on this page):
+Produces something like this (some of the metadata has been elided for the sake of appearance on this page):
 
 ```
 <c:result xmlns:c="http://www.w3.org/ns/xproc-step">
@@ -74,11 +74,9 @@ Produces something like this (much of the metadata has been elided for the sake 
 
    <c:tag dir="Huffman" type="0x0001" name="Number of Tables">4 Huffman tables</c:tag>
 </c:result>
-
-Process finished with exit code 0
 ```
 
-The underlying metadata extractor librar doesn’t operate on PNG files,
+The underlying metadata extractor library doesn’t operate on PNG files,
 so the step returns substantially less information:
 
 ```
@@ -91,3 +89,48 @@ so the step returns substantially less information:
 
 The Exif version of 0 is used to indicate that only the intrinsic
 metadata was available.
+
+Finally, for completeness, here’s a PDF example. This is the output from the
+[document](https://github.com/xmlcalabash/cx-metadata-extractor/blob/main/src/test/resources/document.pdf) PDF which is protected with the password “this is sekrit”.
+
+```
+<cx:metadata-extractor properties="map { 'password': 'this is sekrit' }">
+  <p:with-input>
+    <p:document href="src/test/resources/document.pdf"/>
+  </p:with-input>
+</cx:metadata-extractor>
+```
+
+returns
+
+```
+<c:result xmlns:dc="http://purl.org/dc/elements/1.1/"
+          xmlns:pdf="http://ns.adobe.com/pdf/1.3/"
+          xmlns:xmp="http://ns.adobe.com/xap/1.0/"
+          xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
+          content-type="application/pdf"
+          base-uri="file:/Users/ndw/Projects/xproc/ext-metadata-extractor/src/test/resources/document.pdf"
+          pages="1"
+          height="792.0"
+          width="612.0"
+          units="pt">
+   <xmp:ModifyDate>2021-10-18T07:43:48Z</xmp:ModifyDate>
+   <xmp:CreateDate>2018-10-19T00:22:35Z</xmp:CreateDate>
+   <xmp:MetadataDate>2021-10-18T07:43:48Z</xmp:MetadataDate>
+   <xmp:CreatorTool>Word</xmp:CreatorTool>
+   <xmpMM:DocumentID>uuid:3f2a0902-b27b-11b2-0a00-69983c647348</xmpMM:DocumentID>
+   <xmpMM:InstanceID>uuid:3f2a0a50-b27b-11b2-0a00-e3a9e27946e1</xmpMM:InstanceID>
+   <dc:format>application/pdf</dc:format>
+   <dc:title>
+      <rdf:Alt xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+         <rdf:li>Document1</rdf:li>
+      </rdf:Alt>
+   </dc:title>
+   <dc:creator>
+      <rdf:Seq xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+         <rdf:li>Norman Walsh</rdf:li>
+      </rdf:Seq>
+   </dc:creator>
+   <pdf:Producer>Mac OS X 10.13.6 Quartz PDFContext</pdf:Producer>
+</c:result>
+```
