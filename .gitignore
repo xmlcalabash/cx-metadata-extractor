@@ -1,0 +1,6 @@
+/.bsp
+/.idea
+/pipe.xpl
+/target/
+/project/target/
+.DS_Store
