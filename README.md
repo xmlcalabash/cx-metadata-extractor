@@ -11,10 +11,15 @@ This is an XML Calabash 3.x extension step.
 </p:declare-step>
 ```
 
-This step reads the source file and returns an XML document of metadata. It uses
-Drew Noakes [Metadata Extractor](https://drewnoakes.com/code/exif/) on images,
-falling back to simple image metadata from the Java AWT toolkit. It uses
-It uses the [Apache PDFBox](https://pdfbox.apache.org/) library on PDF files.
+This step reads the source file and returns an XML document of
+metadata. If `assert-metadata` is true, the step will raise an
+exception if metadata cannot be extracted from the source, otherwise,
+no result document is produced in this case.
+
+The step uses Drew Noakes [Metadata
+Extractor](https://drewnoakes.com/code/exif/) on images, falling back
+to simple image metadata from the Java AWT toolkit. It uses It uses
+the [Apache PDFBox](https://pdfbox.apache.org/) library on PDF files.
 
 To read password protected PDF files, the `password` property must be
 provided in either the document properties or the `properties` option.
