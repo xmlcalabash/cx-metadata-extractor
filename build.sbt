@@ -11,7 +11,7 @@ resolvers += "Restlet" at "https://maven.restlet.com"
 
 libraryDependencies += "org.slf4j" % "slf4j-api" % "1.7.32"
 libraryDependencies += "ch.qos.logback" % "logback-classic" % "1.2.6"
-libraryDependencies += "com.xmlcalabash" % "xml-calabash_2.13" % "2.99.4"
+libraryDependencies += "com.xmlcalabash" % "xml-calabash_2.13" % "2.99.5"
 libraryDependencies += "com.drewnoakes" % "metadata-extractor" % "2.16.0"
 libraryDependencies += "org.apache.pdfbox" % "pdfbox" % "2.0.24"
 libraryDependencies += "org.apache.pdfbox" % "xmpbox" % "2.0.24"

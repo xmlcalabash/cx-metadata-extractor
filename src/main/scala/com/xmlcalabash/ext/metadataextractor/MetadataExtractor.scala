@@ -53,7 +53,7 @@ class MetadataExtractor extends DefaultXmlStep {
 
     try {
       val result = impl.extract()
-      consumer.get.receive("result", result, new XProcMetadata(MediaType.XML, meta))
+      consumer.receive("result", result, new XProcMetadata(MediaType.XML, meta))
     } catch {
       case ex: MetadataException =>
         if (assert) {
