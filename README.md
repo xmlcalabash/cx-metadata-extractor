@@ -18,7 +18,7 @@ no result document is produced in this case.
 
 The step uses Drew Noakes [Metadata
 Extractor](https://drewnoakes.com/code/exif/) on images, falling back
-to simple image metadata from the Java AWT toolkit. It uses It uses
+to simple image metadata from the Java AWT toolkit. It uses
 the [Apache PDFBox](https://pdfbox.apache.org/) library on PDF files.
 
 To read password protected PDF files, the `password` property must be
@@ -105,7 +105,7 @@ Finally, for completeness, here’s a PDF example. This is the output from the
 </cx:metadata-extractor>
 ```
 
-returns
+it returns
 
 ```
 <c:result xmlns:dc="http://purl.org/dc/elements/1.1/"
@@ -113,7 +113,7 @@ returns
           xmlns:xmp="http://ns.adobe.com/xap/1.0/"
           xmlns:xmpMM="http://ns.adobe.com/xap/1.0/mm/"
           content-type="application/pdf"
-          base-uri="file:/Users/ndw/Projects/xproc/ext-metadata-extractor/src/test/resources/document.pdf"
+          base-uri="file:/absolute/path/to/document.pdf"
           pages="1"
           height="792.0"
           width="612.0"
