@@ -76,7 +76,6 @@ Produces something like this (some of the metadata has been elided for the sake 
    <c:tag dir="ICC Profile" type="0x6c756d69" name="Luminance">(76.0365, 80, 87.1246)</c:tag>
    <c:tag dir="ICC Profile" type="0x6d656173" name="Measurement">1931 2° Observer, Backing (0, 0, 0), Geometry Unknown, Flare 1%, Illuminant D65</c:tag>
    <c:tag dir="ICC Profile" type="0x74656368" name="Technology">CRT </c:tag>
-
    <c:tag dir="Huffman" type="0x0001" name="Number of Tables">4 Huffman tables</c:tag>
 </c:result>
 ```
