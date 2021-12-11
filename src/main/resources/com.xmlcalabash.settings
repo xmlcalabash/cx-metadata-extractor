@@ -1,0 +1,2 @@
+namespace http://xmlcalabash.com/ns/extensions = cx
+step cx:metadata-extractor = com.xmlcalabash.ext.metadataextractor.MetadataExtractor

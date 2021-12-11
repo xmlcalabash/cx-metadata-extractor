@@ -1,10 +1,9 @@
 package com.xmlcalabash.ext.metadataextractor
 
-import com.xmlcalabash.exceptions.XProcException
 import com.xmlcalabash.model.util.XProcConstants
-import com.xmlcalabash.runtime.{BinaryNode, StaticContext, XProcMetadata, XmlPortSpecification}
+import com.xmlcalabash.runtime.{BinaryNode, XProcMetadata, XmlPortSpecification}
 import com.xmlcalabash.steps.DefaultXmlStep
-import com.xmlcalabash.util.{MediaType, TypeUtils}
+import com.xmlcalabash.util.{MediaType, MinimalStaticContext}
 import net.sf.saxon.s9api.{QName, XdmNode, XdmValue}
 
 import java.nio.charset.StandardCharsets
@@ -33,7 +32,7 @@ class MetadataExtractor extends DefaultXmlStep {
     }
   }
 
-  override def run(context: StaticContext): Unit = {
+  override def run(context: MinimalStaticContext): Unit = {
     super.run(context)
 
     val assert = booleanBinding(_assert_metadata).getOrElse(false)
