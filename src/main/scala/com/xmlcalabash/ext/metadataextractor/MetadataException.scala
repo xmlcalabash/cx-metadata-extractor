@@ -1,6 +1,5 @@
 package com.xmlcalabash.ext.metadataextractor
 
-import com.jafpl.graph.Location
 import com.xmlcalabash.exceptions.XProcException
 import com.xmlcalabash.model.util.XProcConstants
 import net.sf.saxon.s9api.QName
